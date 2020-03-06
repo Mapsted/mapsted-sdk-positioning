@@ -1,1 +1,0 @@
-# mapsted-sdk-positioning
