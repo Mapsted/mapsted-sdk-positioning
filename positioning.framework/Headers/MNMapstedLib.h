@@ -31,6 +31,11 @@
 @class MNCategoryTree;
 @class MNMapstedLibCppProperties;
 @class AnalyticsSessionInfo;
+@class MNTag;
+
+typedef NS_ENUM(NSInteger, MNLanguageType);
+
+typedef NS_ENUM(NSInteger, MNLanguageType);
 
 /// A library of useful properties and functions available in the API of the Mapsted SDK
 @interface MNMapstedLib : NSObject
@@ -43,7 +48,8 @@
 /***************************************************************************/
 
 /// Performs various functions to set up the MNMapstedLib for use.
-- (void)setup;
+
+- (void)setup:(MNLanguageType)languageType calibrationMode:(BOOL)calibrationMode;
 
 /***************************************************************************/
 
@@ -387,6 +393,14 @@
 
 /***************************************************************************/
 
+/// Function to get tcurrent timestamp
+///
+/// - Returns: the current timestamp in milliseconds.
+
+- (double)getTimestampMs;
+
+/***************************************************************************/
+
 // Pauses when application goes to background to save battery
 - (void)pause;
 
@@ -416,4 +430,17 @@
 - (nonnull NSArray<NSNumber *>*)filterAndSortSearchables:(nonnull NSArray<Searchable> *) searchables propertyInfo:(nonnull MNPropertyInfo *) propertyInfo searchString:(nonnull NSString *) searchString;
 
 - (void)setAnalyticsSessionInfo:(nonnull AnalyticsSessionInfo *)sessionInfo;
+
+
+- (BOOL)startCalibration:(nonnull MNTag *)position;
+
+- (void)stopCalibration;
+
+- (void)clearCalibrationMode;
+
+-(void)processData;
+
+- (void)setGroundTruth:(nonnull NSArray<MNPosition *> *) groundTruths;
+
+- (void)addDescription:(NSString *)description;
 @end

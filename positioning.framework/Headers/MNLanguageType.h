@@ -13,7 +13,8 @@
 /// Represents the language available for localization puroses (English, French, etc)
 typedef NS_ENUM(NSInteger, MNLanguageType) {
   MNLanguageTypeEnglish = 1,
-  MNLanguageTypeFrench = 2
+  MNLanguageTypeFrench = 2,
+  MNLanguageTypeArabic = 3
 };
 
 #endif /* MNLanguageType_h */

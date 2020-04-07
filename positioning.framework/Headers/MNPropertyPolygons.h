@@ -45,6 +45,16 @@
 
 /***************************************************************************/
 
+/// Returns a list of mercators associated with the current property's boundary
+- (nonnull NSArray<MNMercator *> *)propertyBoundary;
+
+/***************************************************************************/
+
+/// Returns the centre mercator associated with the current property's boundary
+- (nonnull MNMercator *)propertyBoundaryCentroid;
+
+/***************************************************************************/
+
 @end
 
 
