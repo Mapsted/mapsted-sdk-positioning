@@ -85,7 +85,32 @@ typedef NS_ENUM(NSInteger, MNDataType);
 - (BOOL)isPolygon;
 
 - (CGFloat)area;
+
+- (BOOL)isSearchable;
+
+/* Type of Entity */
+- (BOOL)isStructureType;
+- (BOOL)isRoom;
+- (BOOL)isWashroom;
+- (BOOL)isElevator;
+- (BOOL)isEscalator;
+- (BOOL)isEntranceExit;
+- (BOOL)isFloorOpening;
+- (BOOL)isInaccessible;
+- (BOOL)isParking;
+- (BOOL)isPathway;
+- (BOOL)isRamp;
+- (BOOL)isStairs;
+- (BOOL)isSteps;
+- (BOOL)isObstacleType;
+- (BOOL)isFurniture;
+- (BOOL)isKiosk;
+- (BOOL)isObstruction;
+- (BOOL)isVegetation;
+- (BOOL)isWall;
+- (BOOL)isWater;
+- (BOOL)isPointOfInterestType;
+- (BOOL)isBoundaryType;
+
 @end
-
-
 #endif /* MNMapEntity_h */

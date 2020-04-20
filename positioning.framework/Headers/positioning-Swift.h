@@ -194,7 +194,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import ObjectiveC;
 #endif
 
-#import "/Users/mapsted/Honglin/Mapsted/ios-sdk-positioning/positioning/positioning/positioning.h"
+#import "/Users/priyo/Development/ios-develop/ios-sdk-positioning/positioning/positioning/positioning.h"
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
@@ -483,6 +483,7 @@ SWIFT_CLASS("_TtC11positioning16MNNetworkManager")
 /// This class contains all public api for core positioning.
 SWIFT_CLASS("_TtC11positioning16MNPositioningApi")
 @interface MNPositioningApi : NSObject
+/// Initializer method
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end

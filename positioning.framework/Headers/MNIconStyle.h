@@ -14,11 +14,11 @@
 @interface MNIconStyle : NSObject
 
 @property (readonly) NSInteger layerIdx;
-@property (readonly) NSInteger imageId;
+@property (readonly) NSString * _Nonnull imageId;
 @property (readonly) float iconSize;
 @property (readonly, nullable) MNMercator *iconLocation;
 
-- (nonnull id)initWithLayerIdx:(NSInteger)layerIdx imageId:(NSInteger)imageId iconSize:(float)iconSize iconLocation:(nullable MNMercator *)iconLocation;
+- (nonnull id)initWithLayerIdx:(NSInteger)layerIdx imageId:(NSString *_Nonnull)imageId iconSize:(float)iconSize iconLocation:(nullable MNMercator *)iconLocation;
 
 @end
 
