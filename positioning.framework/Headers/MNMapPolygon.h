@@ -80,9 +80,6 @@ typedef NS_ENUM(NSInteger, MNDataType);
 /// Returns the area of a Polygon
 - (float) area;
 
-//The rotation value for the text.
-- (float) textRotation;
-
 /***************************************************************************/
 
 

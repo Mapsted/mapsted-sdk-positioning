@@ -80,6 +80,10 @@ typedef NS_ENUM(NSInteger, MNDataType);
 - (nonnull NSArray<NSNumber *> *)searchItemIds;
 
 - (nullable MNMercator *)centroid;
+
+/** Text rotation CCW from East */
+- (float) textRotation;
+
 /***************************************************************************/
 
 - (BOOL)isPolygon;
