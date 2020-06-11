@@ -43,7 +43,7 @@
 
 /// - Returns: The new `MNMercator` instance.
 
-- (nonnull id)initWithRouteOptions:(nonnull MNRouteOptions *)routeOptions fromCurrentLocation:(BOOL) fromCurrentLocation destinations:(nonnull NSArray<Searchable> *)destinations startEntity:(nullable id<Searchable>)startEntity;
+- (nonnull id)initWithRouteOptions:(nonnull MNRouteOptions *)routeOptions destinations:(nonnull NSArray<Searchable> *)destinations startEntity:(nullable id<Searchable>)startEntity;
 @end
 
 /***************************************************************************/

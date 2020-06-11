@@ -31,6 +31,8 @@
 /// Should the route be optimized
 @property (readonly) BOOL isRoutingOptimized;
 
+//
+@property (readonly) BOOL isAccessibilityEnabled;
 
 /***************************************************************************/
 
@@ -46,6 +48,7 @@
 
 - (nonnull id)init:(BOOL)includeStairs escalators:(BOOL)includeEscalators elevators:(BOOL)includeElevators current:(BOOL)isFromCurrentLocation optimized:(BOOL)isRouteOptimized;
 
+- (void)setAccessibility:(BOOL)accessible;
 @end
 
 /***************************************************************************/

@@ -13,6 +13,7 @@
 typedef NS_ENUM(NSInteger, MNDataType);
 @class MNPolygonStyle;
 @class MNMercator;
+@class MNMapEntity;
 
 /// Represents a polygon-shaped path on the map
 /// Discussion: A polygon represents an area enclosed by a closed path which is defined by a series of coordinates. Polygons are drawn withh a stroke and a fill. Polygons can describe complex shapes such as multiple non-contiguous areas each defined by a single polygon, areas wit holes in them, and interesection of one or more areas. A complex shape can be defined by a polygon with multiple paths.
@@ -70,6 +71,9 @@ typedef NS_ENUM(NSInteger, MNDataType);
 
 /// Represents the holes available in the map polygon
 - (nonnull NSArray<NSArray <MNMercator *>*> *)holes;
+
+/// Represents the map entity associated with the Map Polygon
+- (nullable MNMapEntity *)entity;
 
 /// Represents the geometric center of the polygon.
 - (nonnull MNMercator *)centroid;

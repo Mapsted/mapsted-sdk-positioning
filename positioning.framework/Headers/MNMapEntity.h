@@ -86,12 +86,25 @@ typedef NS_ENUM(NSInteger, MNDataType);
 
 /***************************************************************************/
 
+/** True if the associated geometry is a Polygon */
 - (BOOL)isPolygon;
 
+/** True if the associated geometry is a Polyline */
+- (BOOL)isPolyline;
+
+/** True if the associated geometry is a Point */
+- (BOOL)isPoint;
+
+/** The area for the associated geometry */
 - (CGFloat)area;
+
+/** The height for the associated geometry */
+- (CGFloat)elevation;
+
 
 - (BOOL)isSearchable;
 
+/****************************************************/
 /* Type of Entity */
 - (BOOL)isStructureType;
 - (BOOL)isRoom;
