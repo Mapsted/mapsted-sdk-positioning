@@ -36,6 +36,10 @@ typedef NS_ENUM(NSInteger, MNDataType);
 - (nullable id)initWithBuildingId:(NSInteger)buildingId entityId:(NSInteger)entityId;
 
 /***************************************************************************/
+/// The type of map data represented (Building, property, etc)
+- (MNDataType)dataType;
+
+/***************************************************************************/
 
 /// A number identifying the property
 - (NSInteger)propertyId;
@@ -49,6 +53,24 @@ typedef NS_ENUM(NSInteger, MNDataType);
 /// A number identifying the entity
 - (NSInteger)entityId;
 
+/***************************************************************************/
+
+/// Whether or not this Entity has a parent entity
+- (BOOL) hasParent;
+
+/// Whether or not this Entity has a child entities
+- (BOOL) hasChildren;
+
+/***************************************************************************/
+
+- (NSInteger)getGeometryType;
+- (nullable MNMapPolygon *) getPolygon;
+- (nullable MNMapPolyline *) getPolyline;
+- (nullable MNMapPoint *) getPoint;
+
+
+/***************************************************************************/
+
 /// A number identifying the pointId
 - (NSInteger)pointId;
 
@@ -58,8 +80,43 @@ typedef NS_ENUM(NSInteger, MNDataType);
 /// A number identifying the polygon
 - (NSInteger)polygonId;
 
-/// The type of data represented (Building, property, etc)
-- (MNDataType)dataType;
+/***************************************************************************/
+
+/// A number identifying the associated cluster
+- (NSInteger)clusterId;
+
+/// Represents an array collection of node identifiers
+- (nonnull NSArray<NSNumber *> *)nodeIds;
+
+/***************************************************************************/
+
+
+/// Represents an array collection of search filter identifiers
+- (nonnull NSArray<NSNumber *> *)searchFilterIds;
+
+/***************************************************************************/
+/// A number identifying the search entity
+- (NSInteger)entityNameId;
+
+/// A number identifying the parent entity
+- (NSInteger)parentEntityId;
+
+/// Represents an array collection of search filter identifiers
+- (nonnull NSArray<NSNumber *> *)childrenEntityIds;
+
+/// A number identifying the search entity
+- (NSInteger)searchEntityId;
+
+/***************************************************************************/
+/// Represents an identifier for the category
+- (nonnull NSString *)categoryUid;
+
+/*
+/// Represents an array collection of category Tag UIDs
+- (nonnull NSArray<NSString *> *)categoryTagUIds;
+*/
+/***************************************************************************/
+
 
 /// A number specifying the type of entity
 - (NSInteger)entityType;
@@ -67,22 +124,39 @@ typedef NS_ENUM(NSInteger, MNDataType);
 /// A number specifying the type of subEntity
 - (NSInteger)subEntityType;
 
-/// A number identifying the search entity
-- (NSInteger)searchEntityId;
 
-/// Represents an identifier for the category
-- (nonnull NSString *)categoryUid;
-
-/// Represents an array collection of search filter identifiers
-- (nonnull NSArray<NSNumber *> *)searchFilterIds;
+/***************************************************************************/
 
 /// Represents an array collection of searchh item identifiers
 - (nonnull NSArray<NSNumber *> *)searchItemIds;
 
+/***************************************************************************/
+
 - (nullable MNMercator *)centroid;
 
-/** Text rotation CCW from East */
+/***************************************************************************/
+
+/** Does Entity have text to plot */
+- (BOOL) hasText;
+
+/** Location of the text  */
+- (nullable MNMercatorZone *) textLocation;
+
 - (float) textRotation;
+
+/***************************************************************************/
+
+/** Does Entity have icon to plot */
+- (BOOL) hasIcon;
+
+/** Identifier for icon image */
+- (nonnull NSString *) iconImageId;
+
+/** location of the icon */
+- (nullable MNMercatorZone *) iconLocation;
+
+/** Size of icon image */
+- (float) iconSize;
 
 /***************************************************************************/
 
@@ -101,11 +175,28 @@ typedef NS_ENUM(NSInteger, MNDataType);
 /** The height for the associated geometry */
 - (CGFloat)elevation;
 
+/****************************************************/
 
+- (nonnull NSString*) name;
+- (nonnull NSString*) nameEnglish;
+
+/** The height for the associated geometry */
+- (CGFloat)cartoCSSHeight;
+- (nonnull NSString*) cartoCSSLayerName;
+- (nonnull NSString*) cartoCSSClassName;
+- (nonnull NSString*) cartoCSSTextLayerName;
+- (nonnull NSString*) cartoCSSTextClassName;
+- (BOOL) isCartoCSSFade;
+
+/****************************************************/
 - (BOOL)isSearchable;
+
+- (BOOL)isRoutable;
 
 /****************************************************/
 /* Type of Entity */
+
+
 - (BOOL)isStructureType;
 - (BOOL)isRoom;
 - (BOOL)isWashroom;
@@ -128,6 +219,8 @@ typedef NS_ENUM(NSInteger, MNDataType);
 - (BOOL)isWater;
 - (BOOL)isPointOfInterestType;
 - (BOOL)isBoundaryType;
+- (BOOL)isProperty;
+- (BOOL)isBuilding;
 
 @end
 #endif /* MNMapEntity_h */

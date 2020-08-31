@@ -111,7 +111,20 @@
 
 /***************************************************************************/
 
+/// website for property
+- (nonnull NSString *)website;
 
+/// phone number for property
+- (nonnull NSString *)phoneNumber;
+
+/***************************************************************************/
+- (int) getPropertyDataMaxVersion;
+
+- (int) getValidationType;
+
+- (bool) isDisplayMultipleBuildings;
+
+- (float) getPoiFadeZoomTh;
 @end
 
 

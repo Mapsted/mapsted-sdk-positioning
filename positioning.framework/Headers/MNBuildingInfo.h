@@ -104,7 +104,22 @@ typedef NS_ENUM(int, CurrentStatus) {
 /// Returns a list of all floors associated with the building
 - (nonnull NSArray<MNFloorInfo *> *)floorInfos;
 
+/// Returns a list of all floors ids associated with the building
+- (nonnull NSArray<NSNumber *> *)floorIds;
+
 /***************************************************************************/
+
+- (float) getFloorDeltaZ;
+
+- (float) getMinZ;
+
+- (float) getBuildingFadeZoomTh;
+
+- (float) getPoiFadeZoomTh;
+
+- (int) getBuildingDataMaxVersion;
+
+- (int) getValidationType;
 
 @end
 

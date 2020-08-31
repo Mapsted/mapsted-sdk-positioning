@@ -36,6 +36,9 @@
 /// Represents a number identifying the building
 - (NSInteger)buildingId;
 
+/// Represents a number identifying the building
+- (NSInteger)version;
+
 /***************************************************************************/
 
 /// Returns a unique string identifying the category matching the specified entity
