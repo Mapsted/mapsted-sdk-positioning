@@ -9,23 +9,26 @@
 #ifndef MNMercatorZoneBridge_h
 #define MNMercatorZoneBridge_h
 
+#import "MNZone.h"
+#import "MNMercator.h"
+
 /// Represents an MNMercatorZone object with a specific MNMercator, accuracy, and timestamp.
 @interface MNMercatorZone : NSObject
 
 /***************************************************************************/
 
 /// Represents the property
-@property (readonly) int propertyId;
+@property (readonly) long propertyId;
 
 /***************************************************************************/
 
 /// Represents the building
-@property (readonly) int buildingId;
+@property (readonly) long buildingId;
 
 /***************************************************************************/
 
 /// Represents the floor
-@property (readonly) int floorId;
+@property (readonly) long floorId;
 
 /***************************************************************************/
 
@@ -62,6 +65,13 @@
 - (nonnull id)initWithPropertyId:(int)propertyId  buildingId:(int)buildingId  floorId:(int)floorId x:(double)x y:(double)y z:(double)z;
 
 /***************************************************************************/
+
+/// Creates an instance from the specified 'MNZone' zone , and 'MNMercator' mercator
+/// - Parameter zone:  The  zone with information about property, building and floor.
+/// - Parameter mercator: The mercator holding coordinates
+/// - Returns: The new `MNMercatorZone` instance.
+
+- (nonnull id)initWithZone:(nonnull MNZone*)zone andMercator: (nonnull MNMercator*) mercator;
 @end
 
 

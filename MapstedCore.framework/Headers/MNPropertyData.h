@@ -9,6 +9,7 @@
 #ifndef MNPropertyData_h
 #define MNPropertyData_h
 
+@class MNMapPolygon;
 @class MNPropertyEntities;
 @class MNPropertyPolygons;
 @class MNPropertyPolylines;
@@ -91,6 +92,9 @@
 - (nonnull NSSet<NSNumber *> *) getLocalBuildingIds:(nonnull MNMercator *)pt;
 
 /***************************************************************************/
+
+/// Returns the the property boundary as a polygon
+- (nullable MNMapPolygon *)boundingPolygon;
 
 @end
 

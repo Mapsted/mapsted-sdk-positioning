@@ -10,6 +10,7 @@
 #define MNBuildingPolygons_h
 
 @class MNMapPolygon;
+@class MNMercator;
 
 /// Represents building polygons
 @interface MNBuildingPolygons : NSObject
@@ -52,6 +53,13 @@
 - (nullable NSArray<MNMapPolygon *> *)floorPolygonsWithFloorId:(NSInteger)floorId;
 
 /***************************************************************************/
+- (bool)isPointInBuildingBoundary: (nonnull MNMercator *)mercator;
+
+/***************************************************************************/
+
+/// Returns the polygon that forms the building boundary
+
+- (nullable MNMapPolygon *)boundingPolygon;
 
 
 @end

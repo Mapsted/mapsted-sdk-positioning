@@ -9,6 +9,7 @@
 #ifndef MNBuildingData_h
 #define MNBuildingData_h
 
+@class MNMapPolygon;
 @class MNBuildingEntities;
 @class MNBuildingPolygons;
 @class MNBuildingPolylines;
@@ -37,7 +38,7 @@
 - (NSInteger)buildingId;
 
 /// Represents a number identifying the building
-- (NSInteger)version;
+//- (NSInteger)version;
 
 /***************************************************************************/
 
@@ -69,6 +70,9 @@
 
 /// Returns the points conntained in the building data
 - (nullable MNBuildingPoints *)points;
+
+/// Returns the the building boundary as a polygon
+- (nullable MNMapPolygon *)boundingPolygon;
 
 /// Returns the building search entites associated with the building data
 - (nullable MNBuildingSearchEntities *)searchEntities;

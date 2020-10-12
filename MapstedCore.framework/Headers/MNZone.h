@@ -55,7 +55,7 @@ typedef NS_ENUM(NSInteger, MNZoneType);
 ///
 /// - Parameter zone:  The zone to compare the current zone with
 /// - Returns: True if the current zone is equal to the given zonne
-- (BOOL)isEqual:(nonnull MNZone *)zone;
+- (BOOL)isEqual:(nullable MNZone *)zone;
 
 /***************************************************************************/
 

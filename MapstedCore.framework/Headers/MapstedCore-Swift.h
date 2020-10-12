@@ -338,11 +338,17 @@ SWIFT_CLASS("_TtC11MapstedCore9MNContent")
 @property (nonatomic) int64_t version;
 @end
 
+@class MNObjectDataMap;
 
 /// Encapsulates the management of the database with Core Data
 SWIFT_CLASS("_TtC11MapstedCore20MNCoreDataController")
 @interface MNCoreDataController : NSObject
 + (MNCoreDataController * _Nonnull)sharedInstance SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)isPropertyInfosUpdated SWIFT_WARN_UNUSED_RESULT;
+///
+/// returns:
+/// the objectmap containing all avaiable PropertyInfo
+- (MNObjectDataMap * _Nullable)getPropertyInfos SWIFT_WARN_UNUSED_RESULT;
 /// Saves analytics package of type ‘type’ at the specified path ‘filePath’
 /// \param filePath The object file path
 ///
@@ -631,7 +637,6 @@ SWIFT_CLASS("_TtC11MapstedCore14MapstedCoreApi")
 @end
 
 @class MNParsedContentResponse;
-@class MNObjectDataMap;
 @class MNEvent;
 @class MNPosition;
 @class MNRouteResponse;
@@ -673,6 +678,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MapstedCoreS
 - (void)onMarketingWithEvent:(MNEvent * _Nonnull)event;
 - (void)onPositionChangeWithEncrypted:(MNPosition * _Nonnull)encrypted;
 - (void)onPositionChangeWithAnimationWithEncrypted:(MNPosition * _Nonnull)encrypted begin:(BOOL)begin;
+- (void)setPositionVisibilityWithVisible:(BOOL)visible;
 - (void)onShareLocationWithPosition:(MNPosition * _Nonnull)position;
 - (void)addNearbyPropertiesWithPropertyIds:(NSSet<NSNumber *> * _Nonnull)propertyIds;
 - (void)removeNearbyPropertiesWithPropertyIds:(NSSet<NSNumber *> * _Nonnull)propertyIds;

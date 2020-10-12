@@ -12,6 +12,15 @@
 #import <Foundation/Foundation.h>
 #import "MNRoute.h"
 
+
+typedef NS_ENUM(NSInteger, MNRouteErrorType) {
+    MNUnknownError,
+    MNNoError,
+    MNOutsideProperty,
+    MNMiscellaneous,
+    MNUnknownUserPosition,
+};
+
 /***************************************************************************/
 
 /// Represents the raw reponse for the route request
@@ -25,6 +34,7 @@
 
 /// Errors encountered in processing the route request
 @property (readonly, nonnull) NSString *error;
+@property (readonly) MNRouteErrorType errorType;
 
 /// Identifier for the property associated with the route request
 @property (readonly) NSInteger propertyId;
@@ -40,7 +50,7 @@
 /// - Parameter error:  The error encountered while processing the route request
 /// - Returns: The new `MNRouteResponse` instance.
 
-- (nonnull id)initWithError:(nonnull NSString *) error;
+- (nonnull id)initWithError:(nonnull NSString *)error type:(MNRouteErrorType)errorType;
 
 /***************************************************************************/
 

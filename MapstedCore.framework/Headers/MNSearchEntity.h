@@ -93,7 +93,7 @@ typedef NS_ENUM(NSInteger, MNDataType);
 
 /***************************************************************************/
 
-- (MNSearchEntity* )uniqueSearchEntityClone:(NSInteger)entityId;
+- (nullable MNSearchEntity* )uniqueSearchEntityClone:(NSInteger)entityId;
 
 @end
 

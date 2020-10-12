@@ -12,12 +12,14 @@
 #import <Foundation/Foundation.h>
 
 @class MNMercator;
+@class MNMercatorZone;
 
 /// Represents a blueprint for searchable objects. The fields correspond to possible search filters
 @protocol Searchable <NSObject>
 - (NSString *)name;
 - (NSString *)categoryName;
 - (MNMercator *)location;
+- (NSArray<MNMercatorZone *> *)locations;
 - (NSInteger)propertyId;
 - (NSInteger)buildingId;
 - (NSInteger)floorId;

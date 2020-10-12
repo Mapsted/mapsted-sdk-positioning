@@ -16,6 +16,7 @@
 @class MNBleDataBridge;
 @class MNPropertyInfo;
 @class MNRouteRequest;
+@class MNMapstedRoutingRequestback;
 @class MNObjcUnitUtils;
 @class MNMercator;
 @class MNSDKPermissions;
@@ -32,6 +33,8 @@
 @class MNMapstedLibCppProperties;
 @class AnalyticsSessionInfo;
 @class MNTag;
+@class MNMercatorZone;
+@class MNZone;
 
 typedef NS_ENUM(NSInteger, MNLanguageType);
 
@@ -271,6 +274,9 @@ typedef NS_ENUM(NSInteger, MNLanguageType);
 /// - Returns : the gps location of the user
 - (nullable MNGPSLoc *)getGpsLocation;
 
+
+- (void)onSelectedCurrentLocation:(nonnull MNMercatorZone*)location;
+
 /***************************************************************************/
 
 /// Function to create a route request based on properties specified by 'routeRequest'
@@ -443,5 +449,7 @@ typedef NS_ENUM(NSInteger, MNLanguageType);
 
 - (void)setGroundTruth:(nonnull NSArray<MNPosition *> *) groundTruths;
 
-- (void)addDescription:(NSString *)description;
+- (void)addDescription:(nonnull NSString *)description;
+
+- (nullable MNZone* )findPropertyAndBuilding:(nonnull MNMercator*)point;
 @end
