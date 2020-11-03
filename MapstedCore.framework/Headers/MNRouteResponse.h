@@ -18,7 +18,8 @@ typedef NS_ENUM(NSInteger, MNRouteErrorType) {
     MNNoError,
     MNOutsideProperty,
     MNMiscellaneous,
-    MNUnknownUserPosition,
+    MNUnknownUserPositionWayfinding,
+    MNUnknownUserPositionPositioning,
 };
 
 /***************************************************************************/

@@ -14,7 +14,10 @@
 typedef NS_ENUM(NSInteger, MNLanguageType) {
   MNLanguageTypeEnglish = 1,
   MNLanguageTypeFrench = 2,
-  MNLanguageTypeArabic = 3
+  MNLanguageTypeArabic = 3,
+  MNLanguageTypeHebrew = 4,
+  MNLanguageTypeJapanese = 5,
+  MNLanguageTypePortuguese = 6,
 };
 
 #endif /* MNLanguageType_h */
