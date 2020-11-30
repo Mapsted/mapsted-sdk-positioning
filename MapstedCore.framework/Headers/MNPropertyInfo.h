@@ -73,6 +73,9 @@
 /// Property's hours of operation
 - (nonnull MNHoursOfOperation *)hoursOfOperation;
 
+/// Property's timezone
+- (nonnull NSString *)timezone;
+
 /// A collection of building information objects
 - (nonnull NSArray<MNBuildingInfo *> *)buildingInfos;
 
