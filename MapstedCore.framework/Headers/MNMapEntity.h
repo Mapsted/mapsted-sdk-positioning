@@ -221,6 +221,7 @@ typedef NS_ENUM(NSInteger, MNDataType);
 - (BOOL)isBoundaryType;
 - (BOOL)isProperty;
 - (BOOL)isBuilding;
+- (BOOL)isTransition;
 
 @end
 #endif /* MNMapEntity_h */
